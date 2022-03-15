@@ -68,11 +68,7 @@ export default function Login() {
 }
 
 const palak = ScaledSheet.create({
-  // last:{
-   
-   
-  //   marginLeft:"11@s"
-  // },
+  
   body:{
    padding:"18@s",
    
