@@ -1,12 +1,14 @@
 import React from "react";
-import {View,Text,Image} from 'react-native'
+import {View,Text,Image,TouchableOpacity} from 'react-native'
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default CareerPathCard = ({ title ,img}) => (
+    <TouchableOpacity activeOpacity={0.9} onPress={()=>{}}>
     <View style={styles.card}>
       <Image source={img} style={styles.img}/>
       <Text style={styles.title}>{title}</Text>
     </View>
+    </TouchableOpacity>
   );
 
 const styles = ScaledSheet.create({

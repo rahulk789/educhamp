@@ -1,7 +1,7 @@
 export const exam = [
     {
         id: 1,
-        name: "Samrath",
+        name: "BITSAT",
         image: {uri: 'https://uniformapp.in/blog/wp-content/uploads/2019/08/download.jpg'},
         eligiblity: '18 years and above'
     },

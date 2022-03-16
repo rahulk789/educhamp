@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import styles from '../component/styles/HomePageStyle'
-import { View, Text,TextInput ,TouchableOpacity,FlatList} from 'react-native';
+import { View, Text,TextInput ,TouchableOpacity,FlatList,Image} from 'react-native';
 import { SearchDropDown } from './SearchDropDown';
 import {exam} from '../dummy/dummy'
 import ExamCard from '../component/ExamCard';
@@ -77,7 +77,13 @@ function HomePage() {
     renderItem = {renderItem}
     keyExtractor = {exam=>exam.id}
     />
-    
+    {
+      !searching &&
+    <TouchableOpacity activeOpacity={0.5} onPress={()=>{}} style={styles.TouchableOpacityStyle} >
+        <Image source={require("../assets/chatbot.png")} 
+          style={styles.FloatingButtonStyle} />
+    </TouchableOpacity>
+    }
     </>
   )
 }
