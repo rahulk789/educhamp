@@ -25,6 +25,7 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 import HomePage from './screen/HomePage';
+import CareerPath from './screen/CareerPath';
 
 
 const App = ()=> {
@@ -36,7 +37,7 @@ const App = ()=> {
 
   return (
     <NavigationContainer>
-      <HomePage/>
+     <HomePage/>
     </NavigationContainer>
   );
 };
