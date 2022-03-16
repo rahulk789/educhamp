@@ -24,7 +24,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import DetailsPage from './screen/DetailsPage';
+import ExamDetails from './screen/ExamDetails';
 
 
 const App = ()=> {
@@ -36,7 +36,7 @@ const App = ()=> {
 
   return (
     <NavigationContainer>
-      <DetailsPage/>
+      <ExamDetails/>
     </NavigationContainer>
   );
 };
