@@ -1,16 +1,16 @@
 import React,{useState} from 'react';
 import { View, Text,TouchableOpacity,FlatList,ImageBackground,Image} from 'react-native';
 import {career_path} from '../dummy/dummy'
-import CareerPathCard from '../component/CareerPathCard';
-import styles from '../component/styles/CareerPathPageStyle'
+import styles from '../component/styles/AcdemicsPageStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import AcademicsCard from '../component/styles/AcademicsCard';
 
-function CareerPath() {
+function Academic() {
 
     const renderItem = ({ item }) => (
-        <CareerPathCard title={item.name} img={item.image} />
+        <AcademicsCard title={item.name} img={item.image} />
     )
-        const img = {uri: "https://i.postimg.cc/MpG75b4N/Rectangle-10.png"}
+        const img = require('../assets/acedamic.png')
     return (
       <>
      <View style={styles.container}>
@@ -23,11 +23,11 @@ function CareerPath() {
         </TouchableOpacity>
         <TouchableOpacity
         onPress={()=>{}}>
-        <Text style={styles.navTextClicked}>Career Path</Text>
+        <Text style={styles.navText}>Career Path</Text>
         </TouchableOpacity>
         <TouchableOpacity
         onPress={()=>{}}>
-        <Text style={styles.navText}>Academics</Text>
+        <Text style={styles.navTextClicked}>Academics</Text>
         </TouchableOpacity>
       </View>
      </View>
@@ -44,4 +44,4 @@ function CareerPath() {
   )
 }
 
-export default CareerPath
+export default Academic
