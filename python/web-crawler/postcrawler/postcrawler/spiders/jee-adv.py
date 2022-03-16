@@ -1,6 +1,17 @@
+from distutils.command.config import config
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+cred = credentials.Certificate("serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+ 
 # from scrapy.crawler import CrawlerProcess
+import json
 from scrapy.utils.project import get_project_settings
 import scrapy
+
+
+db = firestore.client()
 
 class JeeAdvSpider(scrapy.Spider):
     name = 'jee-adv'
@@ -11,25 +22,18 @@ class JeeAdvSpider(scrapy.Spider):
         # links = response.css('a').xpath('@href').getall()
         heading = response.xpath('//td/text()').getall()
         i=0
-        # data =[]
-        # item = []
+        data = []
         while i<(len(heading)/3):
-            # if(i>=3):
-            yield {
-                'activity' : response.xpath('//td[2]/text()')[i].get(),
-                'date' : response.xpath('//td[3]')[i+1].get(),
+            dataitem = {
+                "activity" : response.xpath('//td[2]')[i].get(),
+                'date' : response.xpath('//td[3]')[i+1].get()
             }
+            data.append(dataitem)
             i+=1
-            # else:
-            #     {
-            #         'index' : response.xpath('//td[1]/text()')[i].get(),
-            #         'activity' : response.xpath('//td[2]/text()')[i].get(),
-            #         'date' : response.xpath('//td[3]')[i+1].get(),
-            #         'important-activity' : response.xpath('//td[2]/strong')[i].get(),
-            #         'important' : response.xpath('//td[3]/strong')[i].get()
-            #     }
-            # with open('jee-adv-data.json','w') as output:
-            #     output.write(data)
+        self.log(data)
+        db.collection('examdetails').document('jee-adv').collection('scrapy-data').document('imporatant-event').set({
+            'data': data
+        })
         # def link_extension_checker(url):
         #     if 'https' in url:
         #         return True
