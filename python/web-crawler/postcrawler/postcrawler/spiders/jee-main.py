@@ -1,10 +1,9 @@
-from email.policy import default
 import scrapy
 
 class RedditSpider(scrapy.Spider):
     name = 'jee-main'
     start_urls = [
-        'https://jeemain.nta.nic.in/'
+        'https://jeemain.nta.nic.in/sitemap/'
     ]
     def parse(self, response):
         links = response.css('a').xpath('@href').getall()
