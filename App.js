@@ -24,7 +24,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+<<<<<<< HEAD
+import HomePage from './screen/HomePage';
+import CareerPath from './screen/CareerPath';
+=======
 import DetailsPage from './screen/DetailsPage';
+>>>>>>> 8876841e2a2bd78a1ce6cca28322d4248f28fd87
 
 
 const App = ()=> {
@@ -36,7 +41,11 @@ const App = ()=> {
 
   return (
     <NavigationContainer>
+<<<<<<< HEAD
+     <HomePage/>
+=======
       <DetailsPage/>
+>>>>>>> 8876841e2a2bd78a1ce6cca28322d4248f28fd87
     </NavigationContainer>
   );
 };
