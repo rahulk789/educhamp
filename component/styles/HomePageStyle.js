@@ -54,5 +54,20 @@ export default styles = ScaledSheet.create({
     flex: 1,
     flexDirection : 'row',
     justifyContent : 'space-between'
-  }
+  },
+  TouchableOpacityStyle:{
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 30,
+    bottom: 30,
+    color: 'white'
+  },
+  FloatingButtonStyle: {
+    resizeMode: 'contain',
+    width: 75,
+    height: 75,
+  },
 })

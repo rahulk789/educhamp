@@ -24,7 +24,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+
 import ExamDetails from './screen/ExamDetails';
+import HomePage from './screen/HomePage';
+import CareerPath from './screen/CareerPath';
+import DetailsPage from './screen/DetailsPage';
+
 
 
 const App = ()=> {
@@ -36,7 +41,9 @@ const App = ()=> {
 
   return (
     <NavigationContainer>
-      <ExamDetails/>
+
+     <HomePage/>
+
     </NavigationContainer>
   );
 };
