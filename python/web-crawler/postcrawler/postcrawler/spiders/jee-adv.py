@@ -1,18 +1,22 @@
-from distutils.command.config import config
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-cred = credentials.Certificate("serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
- 
-# from scrapy.crawler import CrawlerProcess
+try:
+    app = firebase_admin.get_app()
+except ValueError as e:
+    cred = credentials.Certificate('../serviceAccountKey.json')
+    firebase_admin.initialize_app(cred)
+
+ # from scrapy.crawler import CrawlerProcess
 import json
 from scrapy.utils.project import get_project_settings
 import scrapy
 
-
-db = firestore.client()
-
+def firebase_store(data:list):
+    db = firestore.client()
+    db.collection('examdetails').document('jee-adv').collection('scrapy-data').document('imporatant-event').set({
+            'data': data
+        })
 class JeeAdvSpider(scrapy.Spider):
     name = 'jee-adv'
     start_urls = [
@@ -30,10 +34,7 @@ class JeeAdvSpider(scrapy.Spider):
             }
             data.append(dataitem)
             i+=1
-        self.log(data)
-        db.collection('examdetails').document('jee-adv').collection('scrapy-data').document('imporatant-event').set({
-            'data': data
-        })
+        firebase_store(data)
         # def link_extension_checker(url):
         #     if 'https' in url:
         #         return True
