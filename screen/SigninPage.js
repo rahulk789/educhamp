@@ -31,7 +31,7 @@ const SigninPage=({navigation})=>
         style={styles.textinputStyle}
         onChangeText={(val)=>setName(val)}
         />
-        <Text style={styles.textStyle}>Email</Text>
+        <Text style={styles.textStyle}>Email/Mobile Number</Text>
         <TextInput
         style={styles.textinputStyle}
         onChangeText={(val)=>setEmail(val)}

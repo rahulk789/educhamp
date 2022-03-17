@@ -24,6 +24,8 @@ import { NavigationContainer, TabRouter } from '@react-navigation/native';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+import DetailsPage from './screen/DetailsPage';
+import Splashscreen from './screen/SplashScreen';
 
 import ExamDetails from './screen/ExamDetails';
 import HomePage from './screen/HomePage';
