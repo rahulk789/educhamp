@@ -20,7 +20,7 @@ const SigninPage=()=>
     <View style={styles.listStyle}>
         <Image 
         style={styles.imageStyle}
-        source={require("./assets/signup.png")}
+        source={require("../assets/signup.png")}
         />
         <Text style={styles.textStyle}>Name</Text>
         <TextInput

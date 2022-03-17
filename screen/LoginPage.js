@@ -100,7 +100,7 @@ const palak = ScaledSheet.create({
   forgot: {
     color: "#021C3A",
     marginLeft:"93@s",
-    marginTop:1,
+    marginTop:5,
     fontSize:"14@s"
   },
   signin: {
@@ -132,7 +132,7 @@ const palak = ScaledSheet.create({
     borderBottomColor:'black',
   },
   password: {
-    marginTop: "4@s",
+    marginTop: 15,
     marginLeft: "13@s",
     fontSize: "19@s",
   },
