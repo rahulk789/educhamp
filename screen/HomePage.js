@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import styles from '../component/styles/HomePageStyle'
 import { View, Text,TextInput ,TouchableOpacity,FlatList,Image} from 'react-native';
 import { SearchDropDown } from './SearchDropDown';
 import {exam} from '../dummy/dummy'
 import ExamCard from '../component/ExamCard';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { AuthContext } from '../route/AuthProvider';
 
 
 
@@ -13,6 +14,7 @@ function HomePage() {
   const [dataSource] = useState(['apple', 'banana', 'cow', 'dex', 'zee', 'orange', 'air', 'bottle','ram','dam','sam','can','rat','fat','glad'])
   const [filtered, setFiltered] = useState(dataSource)
   const [searching, setSearching] = useState(false)
+  const {logout} = useContext(AuthContext)
 
   const onSearch = (text) => {
     if (text) {
@@ -41,7 +43,7 @@ function HomePage() {
     <View style= {styles.container}>
       <View style={styles.header}>
       <Text style={styles.text}>Hi, User</Text>
-      <Icon name='user-circle' style={styles.usericon} size={55} selectionColor='white' color={'white'}/>
+      <Icon name='user-circle' style={styles.usericon} size={55} selectionColor='white' color={'white'} onPress={()=>{logout()}}/>
       </View>
       <TextInput 
       style={styles.textfield} 
