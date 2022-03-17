@@ -1,19 +1,17 @@
+import Academic from "../screen/Academics";
+import CareerPath from "../screen/CareerPath";
+import Details from "../screen/DetailsPage";
 import HomePage from "../screen/HomePage";
-import LoginPage from "../screen/LoginPage";
+import Login from "../screen/LoginPage";
 import SigninPage from "../screen/SigninPage";
-import AcademicPage from "../screen/AcademicsPage";
-import CareerPathPage from "../screen/CareerPathPage";
-import DetailsPage from "../screen/DetailsPage";
-// import SplashScreen from "../screen/SplashScreen"
 
 const route = {
     HOME : HomePage,
-    LOGIN : LoginPage,
+    LOGIN : Login,
     SIGNIN : SigninPage,
-    ACADEMIC : AcademicPage,
-    CAREER : CareerPathPage,
-    DETAIL : DetailsPage,
-    // SPLASH : SplashScreen,
+    DETAILSPAGE : Details,
+    ACADEMICS : Academic,
+    CAREER : CareerPath, 
 };
 
 export default route;

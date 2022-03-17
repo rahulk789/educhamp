@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import {Text, TextInput, Image, ImageBackground} from 'react-native';
 import {
   SafeAreaView,
@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {MultiSelect} from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { AuthContext } from '../route/AuthProvider';
 
 const data = [
   {label: 'Subject 1', value: '1'},
@@ -24,7 +25,13 @@ const data = [
 
 const Details = () => {
   const [selected, setSelected] = useState([]);
-
+  const [grade, setGrade] = useState(null);
+  const [dob,setdob] = useState(null);
+  const [school,setSchool]= useState(null);
+  const [state, setstate] = useState(null);
+  const [city, setCity] = useState(null);
+  const {register} = useContext(AuthContext)
+  
   return (
     <ScrollView>
     <SafeAreaView style={styles.body}>
@@ -32,23 +39,28 @@ const Details = () => {
       <Text style={styles.class}>Class/Grade</Text>
       <TextInput
         placeholder="____________________________________________________"
-        style={styles.enter}></TextInput>
+        style={styles.enter}
+        onChangeText={(val)=>setGrade(val)}></TextInput>
       <Text style={styles.dob}>Date of Birth</Text>
       <TextInput
         placeholder="____________________________________________________"
-        style={styles.enter}></TextInput>
+        style={styles.enter}
+        onChangeText={(val)=>setdob(val)}></TextInput>
       <Text style={styles.school}>School</Text>
       <TextInput
         placeholder="____________________________________________________"
-        style={styles.enter}></TextInput>
+        style={styles.enter}
+        onChangeText={(val)=>setSchool(val)}></TextInput>
       <Text style={styles.state}>State</Text>
       <TextInput
         placeholder="____________________________________________________"
-        style={styles.enter}></TextInput>
+        style={styles.enter}
+        onChangeText={(val)=>setstate(val)}></TextInput>
       <Text style={styles.city}>City</Text>
       <TextInput
         placeholder="____________________________________________________"
-        style={styles.enter}></TextInput>
+        style={styles.enter}
+        onChangeText={(val)=>setCity(val)}></TextInput>
 
       {/* <Button title=""></Button> */}
       <TouchableHighlight style={styles.sub} underlayColor="#fff">
@@ -83,7 +95,10 @@ const Details = () => {
         />
       </View>
 
-      <TouchableHighlight style={styles.submit} underlayColor="#fff">
+      <TouchableHighlight style={styles.submit} underlayColor="#fff"
+      onPress={()=>{
+        register(grade,dob,school,state,city,selected)
+      }}>
         <Text style={styles.submitText}>Submit</Text>
       </TouchableHighlight>
     </SafeAreaView>

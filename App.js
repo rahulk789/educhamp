@@ -19,7 +19,7 @@ import {
   Button
 } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, TabRouter } from '@react-navigation/native';
 
 import {
   Colors,
@@ -27,11 +27,15 @@ import {
 import DetailsPage from './screen/DetailsPage';
 import Splashscreen from './screen/SplashScreen';
 
-import DetailsPage from './screen/DetailsPage';
 import ExamDetails from './screen/ExamDetails';
 import HomePage from './screen/HomePage';
 import CareerPath from './screen/CareerPath';
 import DetailsPage from './screen/DetailsPage';
+import SigninPage from './screen/SigninPage';
+import Login from './screen/LoginPage';
+import route from './route/route';
+import { AuthProvider } from './route/AuthProvider';
+import Router from './route/Router';
 
 const App = ()=> {
   const isDarkMode = useColorScheme() === 'dark';
@@ -41,9 +45,9 @@ const App = ()=> {
   };
 
   return (
-    <NavigationContainer>
-       <HomePage/>
-    </NavigationContainer>
+    <AuthProvider>
+      <Router/>
+    </AuthProvider>
   );
 };
 

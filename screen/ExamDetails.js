@@ -26,10 +26,10 @@ export default class ExampleTwo extends Component {
     return (
       <SafeAreaView>
         <Image
-          source={require('C:\\Users\\palak\\OneDrive\\Desktop\\educhamp\\assets\\backarrow.png')}
+          source={require('../assets/backarrow.png')}
           style={styles.arrow}></Image>
         <Image
-          source={require('C:\\Users\\palak\\OneDrive\\Desktop\\educhamp\\assets\\jeemain_logo.png')}
+          source={require('../assets/jeemain_logo.png')}
           style={styles.jeemain}></Image>
         <Text style={styles.titles}>Joint Entrance Examination</Text>
 

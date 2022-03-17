@@ -1,12 +1,18 @@
 import firestore from '@react-native-firebase/firestore';
 
-export const signupsetdata=(name,email,password) => {
+export const signupsetdata=(name,name,grade,dob,school,state,city,subjects) => {
     firestore()
   .collection('Userdata')
   .add({
     Name: name,
     Email: email,
-    Pasword: password,
+    Grade : grade,
+    DOB : dob,
+    School : school,
+    State: state,
+    city: city,
+    Subjects: subjects,
+    
   })
   .then(() => {
     console.log('User data added!');

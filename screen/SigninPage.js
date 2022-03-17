@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useState,useContext} from 'react';
+import { AuthContext } from '../route/AuthProvider';
 
 import {
   SafeAreaView,
@@ -13,9 +14,12 @@ import {
   TextInput,
   TouchableHighlight
 } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const SigninPage=()=>
+const SigninPage=({navigation})=>
 {
+    const {email,setEmail,password,setPassword,name,setName,register} = useContext(AuthContext)  
+
   return (
     <View style={styles.listStyle}>
         <Image 
@@ -25,21 +29,30 @@ const SigninPage=()=>
         <Text style={styles.textStyle}>Name</Text>
         <TextInput
         style={styles.textinputStyle}
+        onChangeText={(val)=>setName(val)}
         />
         <Text style={styles.textStyle}>Email/Mobile Number</Text>
         <TextInput
         style={styles.textinputStyle}
+        onChangeText={(val)=>setEmail(val)}
         />
         <Text style={styles.textStyle}>Password</Text>
         <TextInput
         style={styles.textinputStyle}
+        onChangeText={(val)=>setPassword(val)}
         />
-        <TouchableHighlight style={styles.button} underlayColor='#fff'>
+        <TouchableHighlight style={styles.button} underlayColor='#fff' onPress={()=>{
+            navigation.navigate('Details Page')}}>
             <Text style={styles.buttonText}>Sign In</Text>
         </TouchableHighlight>
+        <TouchableOpacity 
+        onPress={()=>{
+            navigation.navigate('Log In Screen')
+        }}>
         <Text style={styles.footer}>Already have an account ?
         <Text style={styles.login}>Login</Text>
         </Text>
+        </TouchableOpacity>
        </View>
   );
 };
@@ -72,8 +85,8 @@ const styles=StyleSheet.create({
         borderBottomColor:'black',
     },
     imageStyle:{
-        width:360,
-        height:300,
+        width:160,
+        height:100,
     },
    buttonText:
    {

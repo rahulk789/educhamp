@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext} from "react";
 
 import {
   Text,
@@ -11,34 +11,43 @@ import {
   Button,
   TouchableHighlight
 } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { ScaledSheet } from 'react-native-size-matters';
+import { AuthContext } from "../route/AuthProvider";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-export default function Login() {
+export default function Login({navigation}) {
+  const [email,setEmail]= useState('eg');
+  const [password,setPassword] = useState('eg');
+  const {login}=useContext(AuthContext)
   return (
     
     <SafeAreaView style={styles.body}>
       <Image source={require("../assets/login.png")} style={styles.loginimg}></Image>
       <View style={styles.container}>
-        <Text style={styles.number}>Mobile Number</Text>
+        <Text style={styles.number}>Email</Text>
         <TextInput
           style={styles.enternumber}
+          onChangeText={(val)=>setEmail(val)}
         />
         <Text style={styles.password}>Password</Text>
-        <TextInput style={styles.enterpass} />
+        <TextInput placeholder="___________________________________" style={styles.enterpass}  onChangeText={(val)=>setPassword(val)} />
         <Text style={styles.forgot}>Forgot password?</Text>
       </View>
 
-      <TouchableHighlight
+      <TouchableOpacity
         style={styles.submit}
-      
         underlayColor="#fff"
+        onPress={()=>login(email,password)}
       >
         <Text style={styles.submitText}>Login</Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Sign In Screen')}>
       <Text style={styles.signin}>Dont't have an account? Sign in</Text>
-      
+      </TouchableOpacity>
       <View style={{marginTop:17 ,flexDirection: "row", alignItems: "center" }}>
         <View style={{ flex: 1, height: 1, backgroundColor: "black" }} />
         <View>
