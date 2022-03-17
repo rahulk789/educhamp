@@ -1,5 +1,6 @@
-import Academic from "../screen/Academics";
-import CareerPath from "../screen/CareerPath";
+
+import Academic from "../screen/AcademicsPage";
+import CareerPath from "../screen/CareerPathPage";
 import Details from "../screen/DetailsPage";
 import HomePage from "../screen/HomePage";
 import Login from "../screen/LoginPage";
