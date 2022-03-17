@@ -24,6 +24,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+import DetailsPage from './screen/DetailsPage';
+import Splashscreen from './screen/SplashScreen';
 
 import DetailsPage from './screen/DetailsPage';
 import ExamDetails from './screen/ExamDetails';

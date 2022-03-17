@@ -23,11 +23,10 @@ export default function Login() {
       <View style={styles.container}>
         <Text style={styles.number}>Mobile Number</Text>
         <TextInput
-          placeholder="___________________________________"
           style={styles.enternumber}
         />
         <Text style={styles.password}>Password</Text>
-        <TextInput placeholder="___________________________________" style={styles.enterpass} />
+        <TextInput style={styles.enterpass} />
         <Text style={styles.forgot}>Forgot password?</Text>
       </View>
 
@@ -95,7 +94,7 @@ const styles = ScaledSheet.create({
   forgot: {
     color: "#021C3A",
     marginLeft:"93@s",
-    marginTop:1,
+    marginTop:5,
     fontSize:"14@s"
   },
   signin: {
@@ -123,16 +122,20 @@ const styles = ScaledSheet.create({
     marginTop: "2@s",
     marginLeft: "8@s",
     fontSize: "20@s",
+    borderBottomWidth:1,
+    borderBottomColor:'black',
   },
   password: {
-    marginTop: "4@s",
+    marginTop: 15,
     marginLeft: "13@s",
     fontSize: "19@s",
   },
   enterpass: {
     marginLeft: "6@s",
     fontSize: '20@s',
-    marginTop:'2@s'
+    marginTop:'2@s',
+    borderBottomWidth:1,
+    borderBottomColor:'black',
   },
   button: {
     borderRadius: "50@s",

@@ -26,7 +26,7 @@ const SigninPage=()=>
         <TextInput
         style={styles.textinputStyle}
         />
-        <Text style={styles.textStyle}>Email</Text>
+        <Text style={styles.textStyle}>Email/Mobile Number</Text>
         <TextInput
         style={styles.textinputStyle}
         />
