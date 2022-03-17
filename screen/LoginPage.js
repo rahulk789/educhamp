@@ -20,17 +20,15 @@ import { scale, verticalScale, moderateScale, ScaledSheet } from 'react-native-s
 
 export default function Login() {
   return (
-    
     <SafeAreaView style={palak.body}>
       <Image source={require("C:\\Users\\palak\\OneDrive\\Desktop\\educhamp\\assets\\login.png")} style={palak.loginimg}></Image>
       <View style={palak.container}>
-        <Text style={palak.number}>Mobile Number</Text>
+        <Text style={palak.number}>Email/Mobile Number</Text>
         <TextInput
-          placeholder="___________________________________"
           style={palak.enternumber}
         />
         <Text style={palak.password}>Password</Text>
-        <TextInput placeholder="___________________________________" style={palak.enterpass} />
+        <TextInput style={palak.enterpass} />
         <Text style={palak.forgot}>Forgot password?</Text>
       </View>
 
@@ -130,6 +128,8 @@ const palak = ScaledSheet.create({
     marginTop: "2@s",
     marginLeft: "8@s",
     fontSize: "20@s",
+    borderBottomWidth:1,
+    borderBottomColor:'black',
   },
   password: {
     marginTop: "4@s",
@@ -139,7 +139,9 @@ const palak = ScaledSheet.create({
   enterpass: {
     marginLeft: "6@s",
     fontSize: '20@s',
-    marginTop:'2@s'
+    marginTop:'2@s',
+    borderBottomWidth:1,
+    borderBottomColor:'black',
   },
   button: {
     borderRadius: "50@s",
