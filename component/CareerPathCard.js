@@ -2,11 +2,10 @@ import React from "react";
 import {View,Text,Image,TouchableOpacity} from 'react-native'
 import { ScaledSheet } from 'react-native-size-matters';
 
-export default ExamCard = ({ title ,img}) => (
-  <TouchableOpacity activeOpacity={0.9} onPress={()=>{console.log("Hello")}}>
+export default CareerPathCard = ({ title ,img}) => (
+    <TouchableOpacity activeOpacity={0.9} onPress={()=>{}}>
     <View style={styles.card}>
       <Image source={img} style={styles.img}/>
-      {/* <ImageBackground source={img} style={styles.img} imageStyle={{borderTopLeftRadius: 15,borderTopRightRadius:15}}/> */}
       <Text style={styles.title}>{title}</Text>
     </View>
     </TouchableOpacity>
@@ -34,6 +33,7 @@ const styles = ScaledSheet.create({
         height: '150@s',
         width : '100%',
         borderTopLeftRadius : '15@s',
-        borderTopRightRadius : '15@s'
+        borderTopRightRadius : '15@s',
       },
-  })
+      
+})

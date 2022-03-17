@@ -27,6 +27,11 @@ import {
 import DetailsPage from './screen/DetailsPage';
 import Splashscreen from './screen/SplashScreen';
 
+import DetailsPage from './screen/DetailsPage';
+import ExamDetails from './screen/ExamDetails';
+import HomePage from './screen/HomePage';
+import CareerPath from './screen/CareerPath';
+import DetailsPage from './screen/DetailsPage';
 
 const App = ()=> {
   const isDarkMode = useColorScheme() === 'dark';
@@ -37,7 +42,7 @@ const App = ()=> {
 
   return (
     <NavigationContainer>
-      <Splashscreen/>
+       <HomePage/>
     </NavigationContainer>
   );
 };

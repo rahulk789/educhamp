@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
 import {
   SafeAreaView,
@@ -11,9 +11,9 @@ import {
   Button,
   Image,
   TextInput,
-  ImageBackground,
   TouchableHighlight
 } from 'react-native';
+
 const SigninPage=()=>
 {
   return (
@@ -74,7 +74,6 @@ const styles=StyleSheet.create({
     imageStyle:{
         width:360,
         height:300,
-        
     },
    buttonText:
    {
@@ -104,4 +103,5 @@ const styles=StyleSheet.create({
     padding:5,
    }
 });
+
 export default SigninPage;

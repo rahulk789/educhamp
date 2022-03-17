@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import {
   Text,
   Image,
@@ -12,34 +11,33 @@ import {
   Button,
   TouchableHighlight
 } from "react-native";
-import { s, vs, ms, mvs } from 'react-native-size-matters';
 
-
-import { scale, verticalScale, moderateScale, ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet } from 'react-native-size-matters';
 
 
 export default function Login() {
   return (
-    <SafeAreaView style={palak.body}>
-      <Image source={require("C:\\Users\\palak\\OneDrive\\Desktop\\educhamp\\assets\\login.png")} style={palak.loginimg}></Image>
-      <View style={palak.container}>
-        <Text style={palak.number}>Email/Mobile Number</Text>
+    
+    <SafeAreaView style={styles.body}>
+      <Image source={require("../assets/login.png")} style={styles.loginimg}></Image>
+      <View style={styles.container}>
+        <Text style={styles.number}>Mobile Number</Text>
         <TextInput
-          style={palak.enternumber}
+          style={styles.enternumber}
         />
-        <Text style={palak.password}>Password</Text>
-        <TextInput style={palak.enterpass} />
-        <Text style={palak.forgot}>Forgot password?</Text>
+        <Text style={styles.password}>Password</Text>
+        <TextInput style={styles.enterpass} />
+        <Text style={styles.forgot}>Forgot password?</Text>
       </View>
 
       <TouchableHighlight
-        style={palak.submit}
+        style={styles.submit}
       
         underlayColor="#fff"
       >
-        <Text style={palak.submitText}>Login</Text>
+        <Text style={styles.submitText}>Login</Text>
       </TouchableHighlight>
-      <Text style={palak.signin}>Dont't have an account? Sign in</Text>
+      <Text style={styles.signin}>Dont't have an account? Sign in</Text>
       
       <View style={{marginTop:17 ,flexDirection: "row", alignItems: "center" }}>
         <View style={{ flex: 1, height: 1, backgroundColor: "black" }} />
@@ -49,11 +47,11 @@ export default function Login() {
         <View style={{ flex: 1, height: 1, backgroundColor: "black" }} />
       </View>
 
-      <View style={palak.last}>
-        <Text style={palak.connect}>Connect With &nbsp;
+      <View style={styles.last}>
+        <Text style={styles.connect}>Connect With &nbsp;
         <Image
-         source={require("C:\\Users\\palak\\OneDrive\\Desktop\\educhamp\\assets\\google_logo.png")}
-          style={palak.image}
+         source={require("../assets/google_logo.png")}
+          style={styles.image}
           
         ></Image>
         </Text>
@@ -65,12 +63,8 @@ export default function Login() {
   );
 }
 
-const palak = ScaledSheet.create({
-  // last:{
-   
-   
-  //   marginLeft:"11@s"
-  // },
+const styles = ScaledSheet.create({
+  
   body:{
    padding:"18@s",
    

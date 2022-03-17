@@ -1262,7 +1262,7 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz"
   "version" "1.1.0"
 
-"@react-native-firebase/app@^14.5.1":
+"@react-native-firebase/app@^14.5.1", "@react-native-firebase/app@14.5.1":
   "integrity" "sha512-PmoiKU3DBnuaMZ5Nw71qCmDbJMJQJoYknm5gTI+j09iF0PDzzF0t+Qe/lCWEKMrDs6TuYpJvxFoocSFlAF6BHg=="
   "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-14.5.1.tgz"
   "version" "14.5.1"
@@ -1270,6 +1270,16 @@
     "@expo/config-plugins" "^4.0.18"
     "opencollective-postinstall" "^2.0.1"
     "superstruct" "^0.6.2"
+
+"@react-native-firebase/auth@^14.5.1":
+  "integrity" "sha512-zioU88bUz3sOGzEQw3VhvkWURKjgWk46P8wd0ukPrTeWj0pY1YsCosyy+0Svk9upTBkvHlywXmEHmkNeZLq7Uw=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-14.5.1.tgz"
+  "version" "14.5.1"
+
+"@react-native-firebase/firestore@^14.5.1":
+  "integrity" "sha512-7DYFLA3XYxKGkkKxBaEKGKV/p6lsC6ODOwChCAN6ILHKK3gUlSxIPRkr4AKgFjedqzYWZLceMSH6AgOjeSOSyA=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-14.5.1.tgz"
+  "version" "14.5.1"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
@@ -5651,6 +5661,11 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
+"react-native-element-dropdown@^1.8.2":
+  "integrity" "sha512-V25abfcN5eJg+xF6FRB+tLkw3pCoikGOdlN0Nk2kfJECl4oHO4h587QFIf3mIoorgc/LiaUeUVSFMnJ3Vz0g8Q=="
+  "resolved" "https://registry.npmjs.org/react-native-element-dropdown/-/react-native-element-dropdown-1.8.2.tgz"
+  "version" "1.8.2"
+
 "react-native-safe-area-context@^4.1.2", "react-native-safe-area-context@>= 3.0.0":
   "integrity" "sha512-35hLhtJRCZW0L2zTz0Wz3d0Oh6uYUiRWa/HvoITq7IvD8GkjjM97MKHSfVhC4N9ZNMzqXDuVfYBpHHisc9Z8+Q=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.1.2.tgz"
@@ -5668,6 +5683,11 @@
   "integrity" "sha512-8/C0htHrFWeUm9N8JegmadovUfgTWkGBkDPZ1N3YkXtDWb+98Ya2gThiKcu445r8c7YhcrBfnHz/mYsXIusaOQ=="
   "resolved" "https://registry.npmjs.org/react-native-size-matters/-/react-native-size-matters-0.4.0.tgz"
   "version" "0.4.0"
+
+"react-native-table-component@^1.2.2":
+  "integrity" "sha512-7bbsi5431iWcjj3toASh8lFHGi6AG/+MTd4M7GuksXKxx/CFs/Qwv1Ys7D2wgyuYKe3hxWNfSVrteFj0tOYXYw=="
+  "resolved" "https://registry.npmjs.org/react-native-table-component/-/react-native-table-component-1.2.2.tgz"
+  "version" "1.2.2"
 
 "react-native-vector-icons@^9.1.0":
   "integrity" "sha512-2AHZ/h9d/+rC0odz+OwbGNlc1Lik/pHhSixn4HfC8RtQ8CxfSBZ6gg7bTLcZhdSvZN+ZEGi30Fj+ZnOSQy+smg=="
