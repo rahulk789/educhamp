@@ -6,15 +6,29 @@ import {exam} from '../dummy/dummy'
 import ExamCard from '../component/ExamCard';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { AuthContext } from '../route/AuthProvider';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 
-
-function HomePage() {
+function HomePage({navigation}) {
   
   const [dataSource] = useState(['apple', 'banana', 'cow', 'dex', 'zee', 'orange', 'air', 'bottle','ram','dam','sam','can','rat','fat','glad'])
   const [filtered, setFiltered] = useState(dataSource)
   const [searching, setSearching] = useState(false)
   const {logout} = useContext(AuthContext)
+  function getUsername(documentSnapshot) {
+    return documentSnapshot.get('name');
+  }
+  const [username,setUsername] = useState('User')
+
+  firestore()
+  .collection('users')
+  .doc(auth().currentUser.uid)
+  .get()
+  .then(documentSnapshot => getUsername(documentSnapshot))
+  .then(name => {
+    setUsername(name);
+  });
 
   const onSearch = (text) => {
     if (text) {
@@ -42,7 +56,7 @@ function HomePage() {
     <>
     <View style= {styles.container}>
       <View style={styles.header}>
-      <Text style={styles.text}>Hi, User</Text>
+      <Text style={styles.text}>Hi, {username}</Text>
       <Icon name='user-circle' style={styles.usericon} size={55} selectionColor='white' color={'white'} onPress={()=>{logout()}}/>
       </View>
       <TextInput 
@@ -57,11 +71,11 @@ function HomePage() {
         <Text style={styles.navTextClicked}>Exam</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        onPress={()=>{}}>
+        onPress={()=>{navigation.navigate('Career Page')}}>
         <Text style={styles.navText}>Career Path</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        onPress={()=>{}}>
+        onPress={()=>{navigation.navigate('Academics Page')}}>
         <Text style={styles.navText}>Academics</Text>
         </TouchableOpacity>
       </View>

@@ -5,6 +5,7 @@ import Details from "../screen/DetailsPage";
 import HomePage from "../screen/HomePage";
 import Login from "../screen/LoginPage";
 import SigninPage from "../screen/SigninPage";
+import Splashscreen from "../screen/Splashscreen";
 
 const route = {
     HOME : HomePage,
@@ -13,6 +14,7 @@ const route = {
     DETAILSPAGE : Details,
     ACADEMICS : Academic,
     CAREER : CareerPath, 
+    SPLASH : Splashscreen,
 };
 
 export default route;

@@ -5,7 +5,7 @@ import styles from '../component/styles/AcdemicsPageStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import AcademicsCard from '../component/styles/AcademicsCard';
 
-function Academic() {
+function Academic({navigation}) {
 
     const renderItem = ({ item }) => (
         <AcademicsCard title={item.name} img={item.image} />
@@ -18,11 +18,11 @@ function Academic() {
       <Icon name='user-circle' style={styles.usericon} size={55} selectionColor='white' color={'white'}/>
          <View style={styles.topNav}>
         <TouchableOpacity
-        onPress={()=>{}}>
+        onPress={()=>{navigation.navigate('Home Page')}}>
         <Text style={styles.navText}>Exam</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        onPress={()=>{}}>
+        onPress={()=>{navigation.navigate('Career Page')}}>
         <Text style={styles.navText}>Career Path</Text>
         </TouchableOpacity>
         <TouchableOpacity

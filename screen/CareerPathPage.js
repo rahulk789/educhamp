@@ -5,7 +5,7 @@ import CareerPathCard from '../component/CareerPathCard';
 import styles from '../component/styles/CareerPathPageStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-function CareerPath() {
+function CareerPath({navigation}) {
 
     const renderItem = ({ item }) => (
         <CareerPathCard title={item.name} img={item.image} />
@@ -18,7 +18,7 @@ function CareerPath() {
       <Icon name='user-circle' style={styles.usericon} size={55} selectionColor='white' color={'white'}/>
          <View style={styles.topNav}>
         <TouchableOpacity
-        onPress={()=>{}}>
+        onPress={()=>{navigation.navigate('Home Page')}}>
         <Text style={styles.navText}>Exam</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -26,7 +26,7 @@ function CareerPath() {
         <Text style={styles.navTextClicked}>Career Path</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        onPress={()=>{}}>
+        onPress={()=>{navigation.navigate('Academics Page')}}>
         <Text style={styles.navText}>Academics</Text>
         </TouchableOpacity>
       </View>

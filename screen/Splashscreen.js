@@ -16,7 +16,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-export default function Splashscreen(){
+export default function Splashscreen({navigation}){
     return(
         <View style={styles.listStyle}>
         <LinearGradient colors={['#94EEE3','#B8C8E1']}
@@ -24,16 +24,16 @@ export default function Splashscreen(){
             <View style={styles.listStyle}>
             <Image 
     style={styles.imageStyle}
-    source={require("./assets/logo.png")}>
+    source={require("../assets/logo.png")}>
     </Image>
     <Text style={styles.subtitleStyle}>Learn   Apply   Grow</Text>
     <Text style={styles.textStyle}>Welcome to EduChamp</Text>
      
-    <TouchableHighlight style={styles.button} underlayColor='#fff'>
+    <TouchableHighlight style={styles.button} underlayColor='#fff' onPress={()=>{navigation.navigate('Log In Screen')}}>
             <Text style={styles.buttonText}>Get Started
             <Image 
             style={styles.arrowStyle}
-            source={require("./assets/arrow.png")}
+            source={require("../assets/arrow.png")}
             />
             </Text>
     </TouchableHighlight>
