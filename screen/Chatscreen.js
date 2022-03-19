@@ -22,10 +22,9 @@ export default function Chatscreen () {
         }
     ]);
     function handleSend(newMessage=[]){
-        
+        setMessages(GiftedChat.append(messages,newMessage));
         axios.get(link.concat(newMessage[0]['text'])).then((data)=>{
             console.log(data.data);
-            setMessages(GiftedChat.append(messages,newMessage));
             messages.push({
                 _id: 2,
             text: data.data,
