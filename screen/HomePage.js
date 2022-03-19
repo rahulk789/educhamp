@@ -12,7 +12,7 @@ import firestore from '@react-native-firebase/firestore';
 
 function HomePage({navigation}) {
   
-  const [dataSource] = useState(['apple', 'banana', 'cow', 'dex', 'zee', 'orange', 'air', 'bottle','ram','dam','sam','can','rat','fat','glad'])
+  const [dataSource] = useState(['JEE Main', 'JEE Advance', 'KCET', 'Comedek', 'UPSC', 'Gate', 'JEECUP Entrance Exam', ' CAT Entrance exam','JAM Entrance Exam','CEED Entrance Exam',' PGEE Entrance Exam'])
   const [filtered, setFiltered] = useState(dataSource)
   const [searching, setSearching] = useState(false)
   const {logout,name} = useContext(AuthContext)

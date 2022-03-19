@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
-
+import axios from 'axios'
 export default function Chatscreen () {
+    const[link,setLink] = useState('https://educhamp-api.herokuapp.com/')
     const[messages,setMessages] = useState([
         {
             _id: 0,
@@ -11,17 +12,33 @@ export default function Chatscreen () {
         },
         {
             _id: 1,
-            text: 'Henlo!',
+            text: 'Hello!\nHow can I help you',
             createdAt: new Date().getTime(),
             user:{
                 _id: 2,
-                name: 'Test User',
+                name: 'Bot',
 
             }
         }
     ]);
-    function handleSend(newMessage = []){
-        setMessages(GiftedChat.append(messages,newMessage));
+    function handleSend(newMessage=[]){
+        
+        axios.get(link.concat(newMessage[0]['text'])).then((data)=>{
+            console.log(data.data);
+            setMessages(GiftedChat.append(messages,newMessage));
+            messages.push({
+                _id: 2,
+            text: data.data,
+            createdAt: new Date().getTime(),
+            user:{
+                _id: 2,
+                name: 'Bot',
+
+            }
+            })
+            setMessages(messages)
+        })
+        
     }
     return(
         <GiftedChat
