@@ -36,7 +36,7 @@ function Academic({navigation}) {
      renderItem = {renderItem}
      keyExtractor = {career_path=>career_path.id}
      />
-     <TouchableOpacity activeOpacity={0.5} onPress={()=>{}} style={styles.TouchableOpacityStyle} >
+     <TouchableOpacity activeOpacity={0.5} onPress={()=>{navigation.navigate('Chat Screen')}} style={styles.TouchableOpacityStyle} >
         <Image source={require("../assets/chatbot.png")} 
           style={styles.FloatingButtonStyle} />
     </TouchableOpacity>

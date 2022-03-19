@@ -15,20 +15,20 @@ function HomePage({navigation}) {
   const [dataSource] = useState(['apple', 'banana', 'cow', 'dex', 'zee', 'orange', 'air', 'bottle','ram','dam','sam','can','rat','fat','glad'])
   const [filtered, setFiltered] = useState(dataSource)
   const [searching, setSearching] = useState(false)
-  const {logout} = useContext(AuthContext)
-  function getUsername(documentSnapshot) {
-    return documentSnapshot.get('name');
-  }
-  const [username,setUsername] = useState('User')
+  const {logout,name} = useContext(AuthContext)
+  // function getUsername(documentSnapshot) {
+  //   return documentSnapshot.get('name');
+  // }
+  // const [username,setUsername] = useState('User')
 
-  firestore()
-  .collection('users')
-  .doc(auth().currentUser.uid)
-  .get()
-  .then(documentSnapshot => getUsername(documentSnapshot))
-  .then(name => {
-    setUsername(name);
-  });
+  // firestore()
+  // .collection('users')
+  // .doc(auth().currentUser.uid)
+  // .get()
+  // .then(documentSnapshot => getUsername(documentSnapshot))
+  // .then(name => {
+  //   setUsername(name);
+  // });
 
   const onSearch = (text) => {
     if (text) {
@@ -56,7 +56,7 @@ function HomePage({navigation}) {
     <>
     <View style= {styles.container}>
       <View style={styles.header}>
-      <Text style={styles.text}>Hi, {username}</Text>
+      <Text style={styles.text}>Hi, {name}</Text>
       <Icon name='user-circle' style={styles.usericon} size={55} selectionColor='white' color={'white'} onPress={()=>{logout()}}/>
       </View>
       <TextInput 
@@ -95,7 +95,7 @@ function HomePage({navigation}) {
     />
     {
       !searching &&
-    <TouchableOpacity activeOpacity={0.5} onPress={()=>{}} style={styles.TouchableOpacityStyle} >
+    <TouchableOpacity activeOpacity={0.5} onPress={()=>{navigation.navigate('Chat Screen')}} style={styles.TouchableOpacityStyle} >
         <Image source={require("../assets/chatbot.png")} 
           style={styles.FloatingButtonStyle} />
     </TouchableOpacity>

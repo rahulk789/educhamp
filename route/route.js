@@ -1,6 +1,7 @@
 
 import Academic from "../screen/AcademicsPage";
 import CareerPath from "../screen/CareerPathPage";
+import Chatscreen from "../screen/Chatscreen";
 import Details from "../screen/DetailsPage";
 import HomePage from "../screen/HomePage";
 import Login from "../screen/LoginPage";
@@ -15,6 +16,7 @@ const route = {
     ACADEMICS : Academic,
     CAREER : CareerPath, 
     SPLASH : Splashscreen,
+    CHATSCREEN : Chatscreen,
 };
 
 export default route;
