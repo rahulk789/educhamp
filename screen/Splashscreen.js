@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import {LinearGradient} from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 
 import {
   SafeAreaView,

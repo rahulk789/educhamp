@@ -1,5 +1,5 @@
 import React, { useState, useContext} from "react";
-
+import LinearGradient from "react-native-linear-gradient";
 import {
   Text,
   Image,
@@ -34,7 +34,7 @@ export default function Login({navigation}) {
           onChangeText={(val)=>setEmail(val)}
         />
         <Text style={styles.password}>Password</Text>
-        <TextInput placeholder="___________________________________" style={styles.enterpass}  onChangeText={(val)=>setPassword(val)} />
+        <TextInput  style={styles.enterpass}  onChangeText={(val)=>setPassword(val)} />
         <Text style={styles.forgot}>Forgot password?</Text>
       </View>
 
