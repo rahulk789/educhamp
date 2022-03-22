@@ -12,6 +12,7 @@ const AppStack = () => {
             <Stack.Screen name = "Academics Page" component = {route.ACADEMICS} />
             <Stack.Screen name = "Career Page" component = {route.CAREER} />
             <Stack.Screen name = "Chat Screen" component = {route.CHATSCREEN} />
+            <Stack.Screen name = "Exam Details" component = {route.EXAMDETAILS} />
         </Stack.Navigator>
     );
 }
