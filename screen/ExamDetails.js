@@ -9,21 +9,8 @@ import {
   Col,
 } from 'react-native-table-component';
 
-export default class ExampleTwo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tableData: [
-        ['  Date ', '23 June, 2023'],
-        ['  Eligibility  ', '18 years and above, 3 attempts  '],
-        ['Resources', 'Website, link  '],
-      ],
-    };
-  }
-
-  render() {
-    const state = this.state;
-    return (
+export default function ExamDetail({navigation}) {
+  return (
       <SafeAreaView>
         <Image
           source={require('../assets/backarrow.png')}
@@ -53,7 +40,7 @@ export default class ExampleTwo extends Component {
       </SafeAreaView>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   body: {

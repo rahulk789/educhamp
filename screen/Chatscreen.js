@@ -22,17 +22,24 @@ export default function Chatscreen () {
         }
     ]);
     function handleSend(newMessage=[]){
+<<<<<<< HEAD
+        messages.unshift(newMessage)
+        axios.get(link.concat(newMessage[0]['text'])).then((data)=>{
+            console.log(data.data);
+            setMessages(GiftedChat.append(messages,newMessage));
+            messages.unshift({
+=======
         setMessages(GiftedChat.append(messages,newMessage));
         axios.get(link.concat(newMessage[0]['text'])).then((data)=>{
             console.log(data.data);
             messages.push({
+>>>>>>> cd0e2ec198fcc73147c86f0c48cf17c18ffdba4e
                 _id: 2,
             text: data.data,
             createdAt: new Date().getTime(),
             user:{
                 _id: 2,
                 name: 'Bot',
-
             }
             })
             setMessages(messages)

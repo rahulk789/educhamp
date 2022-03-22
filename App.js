@@ -6,66 +6,43 @@
  * @flow strict-local
  */
 
-import React from 'react';
-
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button
-} from 'react-native';
-
-import { NavigationContainer, TabRouter } from '@react-navigation/native';
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-
-import ExamDetails from './screen/ExamDetails';
-import HomePage from './screen/HomePage';
-import DetailsPage from './screen/DetailsPage';
-import SigninPage from './screen/SigninPage';
-import Login from './screen/LoginPage';
-import route from './route/route';
+import React,{useEffect} from 'react';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import { AuthProvider } from './route/AuthProvider';
 import Router from './route/Router';
-import CareerPath from './screen/CareerPathPage';
+import { default as mapping } from './mapping.json';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import { ThemeContext } from './theme-context';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
+ 
 const App = ()=> {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(()=>{
+    GoogleSignin.configure({
+      webClientId: '1046611894289-uvk692nhcebcismsbphu0i411t7q18er.apps.googleusercontent.com',
+    });
+    console.log("CONFIGURED")
+},[])
+  const [theme, setTheme] = React.useState('dark');
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
   };
-
   return (
+    <>
+
+    <IconRegistry icons={EvaIconsPack}/>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ApplicationProvider {...eva} theme={eva[theme]} customMapping={mapping}>
     <AuthProvider>
       <Router/>
     </AuthProvider>
+    </ApplicationProvider>
+    </ThemeContext.Provider>
+    </>
   );
 };
-
-// const styles = StyleSheet.create({
-//   sectionContainer: {
-//     marginTop: 32,
-//     paddingHorizontal: 24,
-//   },
-//   sectionTitle: {
-//     fontSize: 24,
-//     fontWeight: '600',
-//   },
-//   sectionDescription: {
-//     marginTop: 8,
-//     fontSize: 18,
-//     fontWeight: '400',
-//   },
-//   highlight: {
-//     fontWeight: '700',
-//   },
-// });
 
 export default App;

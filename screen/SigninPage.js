@@ -1,77 +1,114 @@
 import React,{useState,useContext} from 'react';
 import { AuthContext } from '../route/AuthProvider';
-
+import Icon from 'react-native-vector-icons/Feather';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button,
-  Image,
-  TextInput,
-  TouchableHighlight
+    StyleSheet,
+    Image,
+    View,
+    ScrollView,
+    TouchableOpacity,
+    TouchableWithoutFeedback,
+    Dimensions
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Layout, Button,Text,Input } from '@ui-kitten/components';
 
 const SigninPage=({navigation})=>
 {
-    const {email,setEmail,password,setPassword,name,setName,register} = useContext(AuthContext)  
+    const {email,setEmail,password,setPassword,register} = useContext(AuthContext)  
+    const [secureTextEntry, setSecureTextEntry] = React.useState(true);
 
-  return (
-    <View style={styles.listStyle}>
+    const toggleSecureEntry = () => {
+      setSecureTextEntry(!secureTextEntry);
+    };
+  
+    const renderIcon = (props) => (
+      <TouchableWithoutFeedback onPress={toggleSecureEntry}>
+        <Icon {...props} style={styles.icon} size={25} color='#0095ff' name={secureTextEntry ? 'eye-off' : 'eye'}/>
+      </TouchableWithoutFeedback>
+    );
+    const AlertIcon = (props) => (
+      <Icon {...props} name='alert-circle'/>
+    );
+    const renderCaption = () => {
+      return (
+        <View style={styles.captionContainer}>
+          {AlertIcon(styles.captionIcon)}
+          <Text style={styles.captionText}>Should contain at least 8 symbols</Text>
+        </View>
+      )
+    }
+    return (
+      <ScrollView>
+          
+    <Layout style={styles.listStyle}>
+    <Icon name='chevron-left' style={styles.icons} size={40} color='white' onPress={()=>{navigation.pop()}}/>
         <Image 
         style={styles.imageStyle}
         source={require("../assets/signup.png")}
         />
-        <Text style={styles.textStyle}>Name</Text>
-        <TextInput
-        style={styles.textinputStyle}
-        onChangeText={(val)=>setName(val)}
-        />
-        <Text style={styles.textStyle}>Email/Mobile Number</Text>
-        <TextInput
-        style={styles.textinputStyle}
-        onChangeText={(val)=>setEmail(val)}
+        <Text style={styles.textStyle}>Email</Text>
+        <Input
+          style={styles.button}
+          placeholder='example@gmail.com'
+          size= 'large'
+          status='info'
+          onChangeText={(val)=>setEmail(val)}
         />
         <Text style={styles.textStyle}>Password</Text>
-        <TextInput
-        style={styles.textinputStyle}
-        onChangeText={(val)=>setPassword(val)}
+        <Input
+          style = {styles.button}
+          status = 'info'
+          placeholder='Enter Password'
+          size={'large'}
+          caption={renderCaption}
+          accessoryRight={renderIcon}
+          secureTextEntry={secureTextEntry}
+          onChangeText={val => setPassword(val)}
         />
-        <TouchableHighlight style={styles.button} underlayColor='#fff' onPress={()=>{
-            navigation.navigate('Details Page')}}>
-            <Text style={styles.buttonText}>Sign In</Text>
-        </TouchableHighlight>
-        <TouchableOpacity 
-        onPress={()=>{
-            navigation.navigate('Log In Screen')
-        }}>
-        <Text style={styles.footer}>Already have an account ?
-        <Text style={styles.login}>Login</Text>
-        </Text>
-        </TouchableOpacity>
-       </View>
+        <Text style={styles.con_pass}> Confirm Password</Text>
+        <Input
+          style = {styles.button}
+          status = 'info'
+          placeholder='Enter Password'
+          size={'large'}
+          accessoryRight={renderIcon}
+          secureTextEntry={secureTextEntry}
+    />
+    <Button style={styles.button} underlayColor="#fff"   onPress={async()=>{await register().then(()=>{ navigation.navigate('Details Screen')}).catch((e)=>{navigation.navigate('Error Screen')})}}>
+      SignUp
+      </Button>
+       </Layout>
+       </ScrollView>
   );
 };
 
 const styles=StyleSheet.create({
     listStyle:{
-        display:"flex",
-        justifyContent:"center",
-        alignItem:"center",
+        height: 900
     },
     textStyle:{
         fontSize: 27,
-        color:'black',
-        fontFamily:"Cochin",
         marginTop:10,
-        marginRight:20,
+        marginRight:25,
         marginBottom:10,
         marginLeft:25,
 
+    },
+    con_pass:{
+        fontSize: 27,
+        marginTop:10,
+        marginRight:25,
+        marginBottom:10,
+        marginLeft:15,
+
+    },
+    icons:{
+        position: 'absolute',
+        marginTop : 10,
+        marginRight : 60,
+    },
+    layout: {
+        marginTop: 250
     },
     textinputStyle:{
         fontSize: 25,
@@ -81,12 +118,15 @@ const styles=StyleSheet.create({
         marginRight:20,
         marginBottom:10,
         marginLeft:20,
-        borderBottomWidth:1,
-        borderBottomColor:'black',
+        borderRadius: 10
     },
+    last :{
+        alignSelf : 'center'
+      },
     imageStyle:{
-        width:160,
-        height:100,
+        width:420,
+        height:330,
+        alignSelf: 'center',
     },
    buttonText:
    {
@@ -101,10 +141,10 @@ const styles=StyleSheet.create({
    },
    button:{
        margin:15,
+       borderRadius: 15
    },
    footer:{
        fontSize: 20,
-       color:'black',
        fontFamily:"Cochin",
        padding:5,
        textAlign:'center',
@@ -112,7 +152,7 @@ const styles=StyleSheet.create({
    login:{
     fontSize: 22,
     fontFamily:"Cochin",
-    color:'#013D83',
+    color:'#3b66ff',
     padding:5,
    }
 });

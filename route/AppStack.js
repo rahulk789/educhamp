@@ -8,6 +8,7 @@ const AppStack = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name = "Home Page" component = {route.HOME} />
+            <Stack.Screen name = "Exam Detail" component={route.EXAMDETAIL}/>
             <Stack.Screen name = "Academics Page" component = {route.ACADEMICS} />
             <Stack.Screen name = "Career Page" component = {route.CAREER} />
             <Stack.Screen name = "Chat Screen" component = {route.CHATSCREEN} />
