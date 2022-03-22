@@ -22,18 +22,17 @@ export default function Chatscreen () {
         }
     ]);
     function handleSend(newMessage=[]){
-        
+        messages.unshift(newMessage)
         axios.get(link.concat(newMessage[0]['text'])).then((data)=>{
             console.log(data.data);
             setMessages(GiftedChat.append(messages,newMessage));
-            messages.push({
+            messages.unshift({
                 _id: 2,
             text: data.data,
             createdAt: new Date().getTime(),
             user:{
                 _id: 2,
                 name: 'Bot',
-
             }
             })
             setMessages(messages)

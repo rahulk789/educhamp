@@ -1,10 +1,10 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext,useEffect} from "react";
 
 import {
   Image,
-  TouchableWithoutFeedback,
   View,
-  ScrollView,TouchableOpacity
+  ScrollView,
+  TouchableOpacity,Dimensions,
 } from "react-native";
 
 import { ScaledSheet } from 'react-native-size-matters';
@@ -12,65 +12,40 @@ import { AuthContext } from "../route/AuthProvider";
 import { Icon,Layout, Button,Text,Input } from '@ui-kitten/components';
 
 
-export default function Login({navigation}) {
+export default function PhoneAuthPage({navigation}) {
+  const {google,phone,}=useContext(AuthContext)
+  const [numb,setNumb] = useState('')
 
-  const [email,setEmail]= useState('eg');
-  const [password,setPassword] = useState('eg');
-  const {login}=useContext(AuthContext)
-  const [secureTextEntry, setSecureTextEntry] = React.useState(true);
-
-  const toggleSecureEntry = () => {
-    setSecureTextEntry(!secureTextEntry);
-  };
-
-  const renderIcon = (props) => (
-    <TouchableWithoutFeedback onPress={toggleSecureEntry}>
-      <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'}/>
-    </TouchableWithoutFeedback>
-  );
-  const AlertIcon = (props) => (
-    <Icon {...props} name='alert-circle-outline'/>
-  );
-  const renderCaption = () => {
-    return (
-      <View style={styles.captionContainer}>
-        {AlertIcon(styles.captionIcon)}
-        <Text style={styles.captionText}>Should contain at least 8 symbols</Text>
-      </View>
-    )
-  }
-
+  const sendNumber = async(num) => {
+    let newText = '+91 ';
+    let clean = (''+ num).replace(/\D/g,'');
+    for (var i =0;i< clean.length;i++)
+    newText = newText + clean[i];
+    console.log("NEW PHONE NUMBER",newText);
+    await phone(newText)
+    .then(()=>{ navigation.navigate('OTP Screen')})
+    .catch((e)=>{navigation.navigate('Error Screen')});
+  
+}
+  
   return (
     <ScrollView>    
     <Layout style={styles.body}>
-      <Image source={require("../assets/login.png")} style={styles.loginimg}></Image>
-      
-        <Text style={styles.number}>Email</Text>
+      <Image source={require("../assets/6333218.png")} style={styles.loginimg}></Image>
+        <Text style={styles.number}>Mobile Number</Text>
         <Input
-          placeholder='example@gmail.com'
+        value={numb}
+          placeholder='Enter your mobile number'
           style={styles.enternumber}
           size= 'large'
           status='info'
-          onChangeText={(val)=>setEmail(val)}
+          onChangeText={(val)=>setNumb(val)}
         />
-        <Text style={styles.password}>Password</Text>
-        <Input
-          style = {styles.enterpass}
-          status = 'info'
-          placeholder='Enter your Password'
-          size={'large'}
-          caption={renderCaption}
-          accessoryRight={renderIcon}
-          secureTextEntry={secureTextEntry}
-          onChangeText={val => setPassword(val)}
-    />
-        <Text style={styles.forgot}>Forgot password?</Text>
-     
-      <Button style={styles.submit} underlayColor="#fff"   onPress={()=>login(email,password)}>
-      Login
+      <Button style={styles.submit} underlayColor="#fff" onPress={()=>sendNumber(numb)}>
+      OTP
       </Button>
-      <TouchableOpacity onPress={() => navigation.navigate('Sign In Screen')}>
-      <Text style={styles.signin}>Dont't have an account? Sign in</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Email Screen')}>
+      <Text style={styles.signin} category='h1'>Login with Email ?</Text>
       </TouchableOpacity>
       <Layout style={{marginTop:17 ,flexDirection: "row", alignItems: "center" }}>
         <Layout style={{ flex: 1, height: 1, backgroundColor: "black" }} />
@@ -80,7 +55,7 @@ export default function Login({navigation}) {
         <View style={{ flex: 1, height: 1, backgroundColor: "black" }} />
       </Layout>
       <Layout style={styles.last}>
-        <TouchableOpacity onPress={async()=>{await login(email,password)
+        <TouchableOpacity onPress={async()=>{await google()
         .then(()=>{ navigation.navigate('OTP Screen')})
         .catch((e)=>{navigation.navigate('Error Screen')})}}>
         <Text style={styles.connect}>Connect With &nbsp;
@@ -99,7 +74,9 @@ export default function Login({navigation}) {
 const styles = ScaledSheet.create({
   
   body:{
-   padding:"10@s",
+  width : Dimensions.get('window').width,
+  height: Dimensions.get('window').height,
+  padding:"10@s",
   },
   linearGradient: {
     alignItems: 'center',
@@ -125,8 +102,9 @@ const styles = ScaledSheet.create({
     color: "#8F9BB3",
   },
   loginimg:{
-    height:"270@s",
-    width:"320@s"
+    marginTop : '30@s',
+    height:"300@s",
+    width:"315@s"
   },
   image: {
     height: "20@s",
@@ -144,7 +122,7 @@ const styles = ScaledSheet.create({
     fontSize:"15@s",
   },
   number: {
-    marginTop: "5@s",
+    marginTop: "60@s",
     marginLeft: "6@s",
     fontSize: "19@s",
     
@@ -183,7 +161,7 @@ const styles = ScaledSheet.create({
     height: "42@s",
     width: "330@s",
     alignSelf: 'center',
-    marginTop: "10@s",
+    marginTop: "50@s",
     borderRadius: "15@s",
     margin: '2@s'
   },

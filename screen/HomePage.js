@@ -49,7 +49,9 @@ function HomePage({navigation}) {
   }
   
   const renderItem = ({ item }) => (
+    <TouchableOpacity onPress={()=>{navigation.navigate('Exam Detail')}}>
       <ExamCard title={item.name} img={item.image} />
+      </TouchableOpacity>
     )
 
   return (

@@ -1,6 +1,7 @@
-import React, {Children,createContext, useState} from "react";
+import React, {createContext,  useState} from "react";
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import { GoogleSignin,statusCodes} from '@react-native-google-signin/google-signin';
 
 export const AuthContext = createContext();
 
@@ -9,7 +10,8 @@ export const AuthProvider = ({children}) => {
     const [name,setName] = useState(null);
     const [email,setEmail] = useState(null);
     const [password,setPassword] = useState(null);
-
+    const [code, setCode] = useState('');
+    
     return (
         <AuthContext.Provider
         value={{
@@ -19,6 +21,8 @@ export const AuthProvider = ({children}) => {
             setName,
             email,
             setEmail,
+            code,
+            setCode,
             password,
             setPassword,
             login: async (email,password) => {
@@ -29,31 +33,24 @@ export const AuthProvider = ({children}) => {
                 }
             },
             register: async (grade,dob,school,state,city,selected) =>{
-                try{
-                    await auth().createUserWithEmailAndPassword(email,password)
+                await auth().createUserWithEmailAndPassword(email,password)
                     .then(()=>{
-
-                        firestore().collection('users').doc(auth().currentUser.uid)
-                      .set({
-                          name: name,
-                          email: email,
-                          grade: grade,
-                          dob: dob,
-                          school : school,
-                          state: state,
-                          city: city,
-                          selected : selected,
-                          createdAt: firestore.Timestamp.fromDate(new Date()),
-                          userImg: null,
-                      })
-                      //ensure we catch any errors at this stage to advise us if something does go wrong
-                      .catch(error => {
-                          console.log('Something went wrong with added user to firestore: ', error);
-                      })
+                        console.log(email)
+                        console.log(password)
+                    //     firestore().collection('users').doc(auth().currentUser.uid)
+                    //     .set({
+                    //       name: name,
+                    //       email: email,
+                    //       grade: grade,
+                    //       dob: dob,
+                    //       school : school,
+                    //       state: state,
+                    //       city: city,
+                    //       selected : selected,
+                    //       createdAt: firestore.Timestamp.fromDate(new Date()),
+                    //       userImg: null,
+                    //   })
                     })
-                } catch(e){
-                    console.log(e);
-                }
             },
             logout: async() =>{
                 try{
@@ -61,8 +58,20 @@ export const AuthProvider = ({children}) => {
                 } catch(e){
                     console.log(e);
                 }
+            },
+            google: async() =>{
+                const { idToken } = await GoogleSignin.signIn();
+                const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+                auth().signInWithCredential(googleCredential);
+            },
+            phone: async(phoneNumber) =>{
+                await auth().signInWithPhoneNumber(phoneNumber);
+            },
+            otp: async() => {
+                await confirm.confirm(code);
+            },
             }
-        }}
+        }
         >
             {children}
         </AuthContext.Provider>

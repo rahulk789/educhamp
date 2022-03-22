@@ -28,6 +28,16 @@
 		75F507FD1C3B4114B7F4137D /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47122CEA7E6B45B9B0B81960 /* Octicons.ttf */; };
 		C73800ECA3E24EEA966DE77F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 587AD0B5857944D19138A7F5 /* SimpleLineIcons.ttf */; };
 		EE55734C1E08465D9BD1429F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FE5856761054572A8009D88 /* Zocial.ttf */; };
+		34DA2C0F40224F2B95CD3F89 /* acedamic.png in Resources */ = {isa = PBXBuildFile; fileRef = DB733B4C09344479B670F731 /* acedamic.png */; };
+		130CA7D285BE45888E30DF29 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 91794457B64D4222A7641E63 /* arrow.png */; };
+		83A2E198E77F493193930874 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF64412168942B194B27994 /* backarrow.png */; };
+		A48B7E7E871A490C9C30D1F3 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74BA8B03CB1245218B5A5A38 /* bg.png */; };
+		4D955C5AFCA4441594B6F242 /* chatbot.png in Resources */ = {isa = PBXBuildFile; fileRef = B4758B9BFDAB4023A79EB787 /* chatbot.png */; };
+		6963F1A3B83C43DC9E4A4636 /* google_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F384F0A9B1FF43F886F4EFEA /* google_logo.png */; };
+		A4F6AD74EFBD4821882F09A3 /* jeemain_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7D6A7AAF7A4154973FAEBB /* jeemain_logo.png */; };
+		900810C679C8481A9F236EFF /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 8802FDC093754161BD204810 /* login.png */; };
+		81B7218A3A74405998F6FB86 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD98DB18D394F838CD43095 /* logo.png */; };
+		2C38292B88334780BEC97D5E /* signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 165D88CA688D423E9C2EEED4 /* signup.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +78,16 @@
 		47122CEA7E6B45B9B0B81960 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		587AD0B5857944D19138A7F5 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3FE5856761054572A8009D88 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DB733B4C09344479B670F731 /* acedamic.png */ = {isa = PBXFileReference; name = "acedamic.png"; path = "../assets/acedamic.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		91794457B64D4222A7641E63 /* arrow.png */ = {isa = PBXFileReference; name = "arrow.png"; path = "../assets/arrow.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FCF64412168942B194B27994 /* backarrow.png */ = {isa = PBXFileReference; name = "backarrow.png"; path = "../assets/backarrow.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		74BA8B03CB1245218B5A5A38 /* bg.png */ = {isa = PBXFileReference; name = "bg.png"; path = "../assets/bg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4758B9BFDAB4023A79EB787 /* chatbot.png */ = {isa = PBXFileReference; name = "chatbot.png"; path = "../assets/chatbot.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F384F0A9B1FF43F886F4EFEA /* google_logo.png */ = {isa = PBXFileReference; name = "google_logo.png"; path = "../assets/google_logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2F7D6A7AAF7A4154973FAEBB /* jeemain_logo.png */ = {isa = PBXFileReference; name = "jeemain_logo.png"; path = "../assets/jeemain_logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8802FDC093754161BD204810 /* login.png */ = {isa = PBXFileReference; name = "login.png"; path = "../assets/login.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3CD98DB18D394F838CD43095 /* logo.png */ = {isa = PBXFileReference; name = "logo.png"; path = "../assets/logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		165D88CA688D423E9C2EEED4 /* signup.png */ = {isa = PBXFileReference; name = "signup.png"; path = "../assets/signup.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +196,16 @@
 				47122CEA7E6B45B9B0B81960 /* Octicons.ttf */,
 				587AD0B5857944D19138A7F5 /* SimpleLineIcons.ttf */,
 				3FE5856761054572A8009D88 /* Zocial.ttf */,
+				DB733B4C09344479B670F731 /* acedamic.png */,
+				91794457B64D4222A7641E63 /* arrow.png */,
+				FCF64412168942B194B27994 /* backarrow.png */,
+				74BA8B03CB1245218B5A5A38 /* bg.png */,
+				B4758B9BFDAB4023A79EB787 /* chatbot.png */,
+				F384F0A9B1FF43F886F4EFEA /* google_logo.png */,
+				2F7D6A7AAF7A4154973FAEBB /* jeemain_logo.png */,
+				8802FDC093754161BD204810 /* login.png */,
+				3CD98DB18D394F838CD43095 /* logo.png */,
+				165D88CA688D423E9C2EEED4 /* signup.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +317,16 @@
 				75F507FD1C3B4114B7F4137D /* Octicons.ttf in Resources */,
 				C73800ECA3E24EEA966DE77F /* SimpleLineIcons.ttf in Resources */,
 				EE55734C1E08465D9BD1429F /* Zocial.ttf in Resources */,
+				34DA2C0F40224F2B95CD3F89 /* acedamic.png in Resources */,
+				130CA7D285BE45888E30DF29 /* arrow.png in Resources */,
+				83A2E198E77F493193930874 /* backarrow.png in Resources */,
+				A48B7E7E871A490C9C30D1F3 /* bg.png in Resources */,
+				4D955C5AFCA4441594B6F242 /* chatbot.png in Resources */,
+				6963F1A3B83C43DC9E4A4636 /* google_logo.png in Resources */,
+				A4F6AD74EFBD4821882F09A3 /* jeemain_logo.png in Resources */,
+				900810C679C8481A9F236EFF /* login.png in Resources */,
+				81B7218A3A74405998F6FB86 /* logo.png in Resources */,
+				2C38292B88334780BEC97D5E /* signup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
