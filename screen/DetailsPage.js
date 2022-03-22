@@ -1,8 +1,7 @@
 import React, {useState,useContext} from 'react';
-import {Text, TextInput, Image, ImageBackground} from 'react-native';
+import {TextInput, Image, ImageBackground} from 'react-native';
 import {
   SafeAreaView,
-  Button,
   TouchableHighlight,
   StyleSheet,
   View,
@@ -11,6 +10,7 @@ import {
 import {MultiSelect} from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { AuthContext } from '../route/AuthProvider';
+import { Layout, Button,Text,Input } from '@ui-kitten/components';
 
 const data = [
   {label: 'Subject 1', value: '1'},
@@ -34,39 +34,39 @@ const Details = () => {
   
   return (
     <ScrollView>
-    <SafeAreaView style={styles.body}>
+    <Layout style={styles.body}>
       <Text style={styles.complete}>Complete your profile!</Text>
       <Text style={styles.class}>Class/Grade</Text>
-      <TextInput
+      <Input
         placeholder="____________________________________________________"
         style={styles.enter}
-        onChangeText={(val)=>setGrade(val)}></TextInput>
+        onChangeText={(val)=>setGrade(val)}></Input>
       <Text style={styles.dob}>Date of Birth</Text>
-      <TextInput
+      <Input
         placeholder="____________________________________________________"
         style={styles.enter}
-        onChangeText={(val)=>setdob(val)}></TextInput>
+        onChangeText={(val)=>setdob(val)}></Input>
       <Text style={styles.school}>School</Text>
-      <TextInput
+      <Input
         placeholder="____________________________________________________"
         style={styles.enter}
-        onChangeText={(val)=>setSchool(val)}></TextInput>
+        onChangeText={(val)=>setSchool(val)}></Input>
       <Text style={styles.state}>State</Text>
-      <TextInput
+      <Input
         placeholder="____________________________________________________"
         style={styles.enter}
-        onChangeText={(val)=>setstate(val)}></TextInput>
+        onChangeText={(val)=>setstate(val)}></Input>
       <Text style={styles.city}>City</Text>
-      <TextInput
+      <Input
         placeholder="____________________________________________________"
         style={styles.enter}
-        onChangeText={(val)=>setCity(val)}></TextInput>
+        onChangeText={(val)=>setCity(val)}></Input>
 
       {/* <Button title=""></Button> */}
       <TouchableHighlight style={styles.sub} underlayColor="#fff">
         <Text style={styles.subText}>Interested Subjects</Text>
       </TouchableHighlight>
-      <View style={styles.container}>
+      <Layout style={styles.container}>
         <MultiSelect
           style={styles.dropdown}
           placeholderStyle={styles.placeholderStyle}
@@ -93,7 +93,7 @@ const Details = () => {
           )}
           selectedStyle={styles.selectedStyle}
         />
-      </View>
+      </Layout>
 
       <TouchableHighlight style={styles.submit} underlayColor="#fff"
       onPress={()=>{
@@ -101,7 +101,7 @@ const Details = () => {
       }}>
         <Text style={styles.submitText}>Submit</Text>
       </TouchableHighlight>
-    </SafeAreaView>
+    </Layout>
     </ScrollView>
   );
 };

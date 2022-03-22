@@ -20,7 +20,7 @@ function OtpScreen({navigation}) {
         textInputStyle={styles.roundedTextInput}
         inputCount = {6}
         />
-        <Button style={styles.button} size={'large'} onPress={async()=>{otp().then(navigation.navigate('Details Page')).catch((e)=>{navigation.navigate('Error Page')})}}>Submit</Button>
+        <Button style={styles.button} size={'large'} onPress={async()=>{otp().then(navigation.navigate('Details Page')).catch((e)=>{navigation.navigate('Error Screen')})}}>Submit</Button>
     </Layout>
   )
 }
