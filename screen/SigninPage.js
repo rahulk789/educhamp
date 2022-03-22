@@ -41,7 +41,7 @@ const SigninPage=({navigation})=>
       <ScrollView>
           
     <Layout style={styles.listStyle}>
-    <Icon name='chevron-left' style={styles.icons} size={40} color='white' onPress={()=>{navigation.pop()}}/>
+    <Icon name='chevron-left' style={styles.icons} size={40} color='white' onPress={()=>{cossole.log("CLICKED");navigation.pop()}}/>
         <Image 
         style={styles.imageStyle}
         source={require("../assets/signup.png")}

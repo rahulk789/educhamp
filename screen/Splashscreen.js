@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React from 'react';
-=======
-import React, { useReducer } from 'react';
-import LinearGradient from 'react-native-linear-gradient';
->>>>>>> cd0e2ec198fcc73147c86f0c48cf17c18ffdba4e
 
 import {
   StyleSheet,
