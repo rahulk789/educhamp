@@ -1,10 +1,5 @@
 #regex part needs to be configured
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
-#from scrapy.crawler import CrawlerProcess
-cred = credentials.Certificate('serviceAccountKey.json')
-firebase_admin.initialize_app(cred)
+#since all the files are parsed during the crawl of a single py file, the firebase auth neednt be done in every file
 import json
 from scrapy.utils.project import get_project_settings
 import scrapy
