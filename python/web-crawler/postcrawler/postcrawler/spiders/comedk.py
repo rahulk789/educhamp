@@ -1,9 +1,3 @@
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
-#from scrapy.crawler import CrawlerProcess
-cred = credentials.Certificate('serviceAccountKey.json')
-firebase_admin.initialize_app(cred)
 import json
 from scrapy.utils.project import get_project_settings
 import scrapy
