@@ -1,8 +1,7 @@
-# educhamp
-Mobile app for guiding students to choose their career path.
-# Firestore:
-List of data to be stored here are as follows \
-1login info: username,phonenumber,emailid and password \
-2.User details- DOB,Class,city, etc \
-3.Exam dates \
-4.avalaible career paths (job postings like data science) in the selected subject (trending technologies)
+# Educhamp
+
+![image](https://user-images.githubusercontent.com/83643646/208142148-2078d1aa-a7f2-45a6-87d9-4d9ed710ec3a.png)
+
+![image](https://user-images.githubusercontent.com/83643646/208141979-0f8f3205-cfa6-49ed-8ca2-21a099f48ac8.png)
+
+
