@@ -12,6 +12,7 @@ Since around two billion people are actively using Whatsapp. EduChamp can also b
 
 https://user-images.githubusercontent.com/91654378/168887013-18fb04e4-2d17-418f-8c65-5e8e2e62750f.mp4
 
+---
 
 ![image](https://user-images.githubusercontent.com/83643646/208142148-2078d1aa-a7f2-45a6-87d9-4d9ed710ec3a.png)
 
