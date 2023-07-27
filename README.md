@@ -10,6 +10,7 @@ An AI powered chatbot for EduChamp. It supports multilingual support for a more 
 
 Since around two billion people are actively using Whatsapp. EduChamp can also be acessed through Whatapps to have easy usage by the consumer.This was possible by integrating our REST API to Twilio platform.
 
+https://github.com/rahulk789/educhamp/assets/91654378/b6793e2f-1faa-4037-9c6c-9e451180a42f
 
 ---
 
